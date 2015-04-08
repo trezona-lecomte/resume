@@ -1,28 +1,27 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a very simple website created to aid in my application for a job as a 
+Software Developer for the awesome NZ company Powershop.
 
-Things you may want to cover:
+This site consists of 3 pages:
 
-* Ruby version
+* Cover Letter
 
-* System dependencies
+* Resume
 
-* Configuration
+* Puzzle Solution
 
-* Database creation
+Each of the Cover Letter and Resume pages contain image versions of their 
+respective documents, as well as links to download full PDF versions. The 
+Puzzle Solution page contains a 7-step walkthrough of how I arrived at my
+solution for the wee puzzle that Powershop presented in their job advertisement
+for this position.
 
-* Database initialization
+This site was built with Ruby on Rails which was, although overkill for such a
+project, the logical choice given that Powershop use Ruby on Rails. Although
+I haven't needed to implement any models, This site at least serves to 
+demonstrate a basic understanding of the rails project structure, middleware
+stack, routing (again very basic with no resourceful routing), dependency 
+management tool (bundle), views with emedded ruby, and the rails asset pipeline.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
