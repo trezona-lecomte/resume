@@ -12,113 +12,127 @@
         </div>
       </div>
     </div>
-    <div class="row-fluid panel-row">
-      <div class="col-sm-12">
-        <div class="panel panel-default">
-          <div class="panel-heading">Step 1 - store the codeword</div>
-          <div class="panel-body">
-            The first order of business is to assign a descriptive variable name
-            to our puzzle string:
-            <div class="code-snippet">
-              <pre><code class="ruby">> encoded = "zjY29k4EpuaGzq6Gzg=="<br>=> "zjY29k4EpuaGzq6Gzg=="</code></pre>
-            </div>
+  </div>
+  <div class="row-fluid panel-row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Step 1 - store the codeword
+        </div>
+        <div class="panel-body">
+          The first order of business is to assign a descriptive variable name
+          to our puzzle string:
+          <div class="code-snippet">
+            <pre><code class="ruby">> encoded = "zjY29k4EpuaGzq6Gzg=="<br>=> "zjY29k4EpuaGzq6Gzg=="</code></pre>
           </div>
         </div>
       </div>
     </div>
-    <div class="row-fluid panel-row">
-      <div class="col-sm-12">
-        <div class="panel panel-default">
-          <div class="panel-heading">Step 2 - require Base64</div>
-          <div class="panel-body">
-            Given the puzzle description, we know that this string has been encoded
-            using Base64 encoding, so next we'll require the
-            <a href="http://ruby-doc.org/stdlib-2.2.0/libdoc/base64/rdoc/Base64.html">Base64</a>
-            module from the Ruby Standard Library:
-            <div class="code-snippet">
-              <pre><code class="ruby">> require 'base64'<br>=> true</code></pre>
-            </div>
+  </div>
+  <div class="row-fluid panel-row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+            Step 2 - require Base64
+        </div>
+        <div class="panel-body">
+          Given the puzzle description, we know that this string has been encoded
+          using Base64 encoding, so next we'll require the
+          <a href="http://ruby-doc.org/stdlib-2.2.0/libdoc/base64/rdoc/Base64.html">Base64</a>
+          module from the Ruby Standard Library:
+          <div class="code-snippet">
+            <pre><code class="ruby">> require 'base64'<br>=> true</code></pre>
           </div>
         </div>
       </div>
     </div>
-    <div class="row-fluid panel-row">
-      <div class="col-sm-12">
-        <div class="panel panel-default">
-          <div class="panel-heading">Step 3 - find the right method</div>
-          <div class="panel-body">
-            Next, a quick look at the Base64 module and it's methods will yield
-            some likely candidates for decoding our string:
-            <div class="code-snippet">
-              <pre><code class="ruby">> Base64.methods<br>=> [:encode64,<br>    :decode64,<br>    ...]</code></pre>
-            </div>
-            Note that the output has been truncated as it's quite long. For our
-            purposes we only need to read the first two lines to find the method we're after - decode64.
+  </div>
+  <div class="row-fluid panel-row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Step 3 - find the right method
+        </div>
+        <div class="panel-body">
+          Next, a quick look at the Base64 module and it's methods will yield
+          some likely candidates for decoding our string:
+          <div class="code-snippet">
+            <pre><code class="ruby">> Base64.methods<br>=> [:encode64,<br>    :decode64,<br>    ...]</code></pre>
+          </div>
+          Note that the output has been truncated as it's quite long. For our
+          purposes we only need to read the first two lines to find the method we're after - decode64.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row-fluid panel-row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Step 4 - decode
+        </div>
+        <div class="panel-body">
+          We're ready to give decode64 a whirl on our encoded string:
+          <div class="code-snippet">
+            <pre><code class="ruby">> decoded = Base64.decode64(encoded)<br>=> "\xCE66\xF6N\x04\xA6\xE6\x86\xCE\xAE\x86\xCE"</code></pre>
           </div>
         </div>
       </div>
     </div>
-    <div class="row-fluid panel-row">
-      <div class="col-sm-12">
-        <div class="panel panel-default">
-          <div class="panel-heading">Step 4 - decode</div>
-          <div class="panel-body">
-            We're ready to give decode64 a whirl on our encoded string:
-            <div class="code-snippet">
-              <pre><code class="ruby">> decoded = Base64.decode64(encoded)<br>=> "\xCE66\xF6N\x04\xA6\xE6\x86\xCE\xAE\x86\xCE"</code></pre>
-            </div>
+  </div>
+  <div class="row-fluid panel-row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Step 5 - unpack
+        </div>
+        <div class="panel-body">
+          Now we need to deal with the bit-reversal, as mentioned in the puzzle
+          description. A little digging around in the
+          <a href="http://ruby-doc.org/core-2.2.1/String.html">String</a> class
+          (of Ruby Core) turns up the unpack method, which promises to decode
+          a given string according to the provided directives. In this case
+          we’ll give it a try with the String directive for returning a bit
+          string with the most significant bit (MSB) first:
+          <div class="code-snippet">
+            <pre><code class="ruby">> bit_string = decoded.unpack('B*')<br>=> ["11001110001101100011011011110110010011100000010010100110111001101000011011001110101011101000011011001110"]</code></pre>
           </div>
         </div>
       </div>
     </div>
-    <div class="row-fluid panel-row">
-      <div class="col-sm-12">
-        <div class="panel panel-default">
-          <div class="panel-heading">Step 5 - unpack</div>
-          <div class="panel-body">
-            Now we need to deal with the bit-reversal, as mentioned in the puzzle
-            description. A little digging around in the
-            <a href="http://ruby-doc.org/core-2.2.1/String.html">String</a> class
-            (of Ruby Core) turns up the unpack method, which promises to decode
-            a given string according to the provided directives. In this case
-            we’ll give it a try with the String directive for returning a bit
-            string with the most significant bit (MSB) first:
-            <div class="code-snippet">
-              <pre><code class="ruby">> bit_string = decoded.unpack('B*')<br>=> ["11001110001101100011011011110110010011100000010010100110111001101000011011001110101011101000011011001110"]</code></pre>
-            </div>
+  </div>
+  <div class="row-fluid panel-row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Step 6 - re-pack
+        </div>
+        <div class="panel-body">
+          We’ve got raw bits to play with now, so let's re-pack the bit string in reverse order
+          - with the least significant bit (LSB) first:
+          <div class="code-snippet">
+            <pre><code class="ruby">> repacked = bit_string.pack('b*')<br>=> "sllor egasuas"</code></pre>
           </div>
+          At this point, those with a sturdy Kiwi upbringing may have already divined the meaning
+          of the puzzle. That said, those who aren’t pastry enthusiasts may require one final step
+          to reach the same conclusion...
         </div>
       </div>
     </div>
-    <div class="row-fluid panel-row">
-      <div class="col-sm-12">
-        <div class="panel panel-default">
-          <div class="panel-heading">Step 6 - re-pack</div>
-          <div class="panel-body">
-            We’ve got raw bits to play with now, so let's re-pack the bit string in reverse order
-            - with the least significant bit (LSB) first:
-            <div class="code-snippet">
-              <pre><code class="ruby">> repacked = bit_string.pack('b*')<br>=> "sllor egasuas"</code></pre>
-            </div>
-            At this point, those with a sturdy Kiwi upbringing may have already divined the meaning
-            of the puzzle. That said, those who aren’t pastry enthusiasts may require one final step
-            to reach the same conclusion...
-          </div>
+  </div>
+  <div class="row-fluid panel-row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Step 7 - the revelation
         </div>
-      </div>
-    </div>
-    <div class="row-fluid panel-row">
-      <div class="col-sm-12">
-        <div class="panel panel-default">
-          <div class="panel-heading">Step 7 - the revelation</div>
-          <div class="panel-body">
-            We can use a simple String method to display the solution, thereby making ourselves
-            both happy and hungry for having solved it:
-            <div class="code-snippet">
-              <pre><code class="ruby">> solution = repacked.reverse<br>=> "sausage rolls"</code></pre>
-            </div>
-            And that's that. Thanks for promoting a bit of fun with your job ad!
+        <div class="panel-body">
+          We can use a simple String method to display the solution, thereby making ourselves
+          both happy and hungry for having solved it:
+          <div class="code-snippet">
+            <pre><code class="ruby">> solution = repacked.reverse<br>=> "sausage rolls"</code></pre>
           </div>
+          And that's that. Thanks for promoting a bit of fun with your job ad!
         </div>
       </div>
     </div>
