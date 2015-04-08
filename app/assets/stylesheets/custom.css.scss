@@ -1,0 +1,374 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import url("http://fonts.googleapis.com/css?family=Ubuntu:400,500,700");
+
+$dark-blue: #222931;
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ol, ul {
+    list-style: outside none none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "icomoon";
+    font-style: normal;
+    font-weight: normal;
+    src: url("/assets/fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/icomoon.woff") format("woff"), url("/assets/fonts/icomoon.ttf") format("truetype"), url("/assets/fonts/icomoon.svg#icomoon") format("svg");
+}
+body {
+    background-color: #f8f8f8;
+    font-family: "Ubuntu",sans-serif;
+    font-size: 100%;
+    text-shadow: 0 1px 0 #fff;
+}
+.wrapper {
+    margin: auto;
+    max-width: 900px;
+    padding: 0 20px;
+}
+p {
+    line-height: 2em;
+    margin: 0 0 20px;
+}
+a {
+    color: #00008F;
+    text-decoration: none;
+}
+a:hover {
+    color: #000;
+}
+.txt-ctr {
+    text-align: center;
+}
+h1, .h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 0.67em 0;
+}
+h2, .h2 {
+    font-size: 2em;
+    font-weight: 600;
+    margin: 0.83em 0;
+}
+h3, .h3 {
+    font-size: 1.75em;
+    font-weight: 500;
+    margin: 1em 0;
+}
+h4, .h4 {
+    font-size: 1.25em;
+    margin: 1.33em 0;
+}
+h5, .h5 {
+    font-size: 1em;
+    margin: 1.67em 0;
+}
+h6, .h6 {
+    font-size: 0.75em;
+    margin: 2.33em 0;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.clear {
+    clear: both;
+}
+.nav {
+}
+.nav li {
+    display: inline-block;
+    margin-left: -0.32em;
+}
+.nav li:first-child {
+    margin-left: 0;
+}
+.nav li a {
+    display: block;
+}
+@media screen and (max-width: 550px) {
+    p {
+        line-height: 1.6em;
+    }
+}
+@media not all, only screen and (min--moz-device-pixel-ratio: 2), not all, not all, only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+}
+.header {
+    background-color: $dark-blue;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+@media screen and (max-width: 1500px) {
+    .header {
+        background-size: auto auto;
+    }
+}
+.header-text {
+    color: #fff;
+    font-size: 3.25em;
+    min-height: 215px;
+    padding: 80px 0 0;
+    text-align: center;
+    text-shadow: 0 2px 4px #000;
+}
+.greeting {
+    font-size: 2em;
+    font-weight: 500;
+}
+.sub-greeting {
+    font-size: 1em;
+    margin-top: 20px;
+}
+.thanks {
+    font-size: 1em;
+    margin-top: 0px;
+}
+.avatar {
+    border: 5px solid $dark-blue;
+    border-radius: 100%;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    display: block;
+    height: 130px;
+    width: 130px;
+    margin: -40px auto 20px;
+    overflow: hidden;
+    padding: 0;
+    position: center;
+    z-index: 9999;
+}
+.avatar img {
+    border: 0 none;
+    border-radius: 100%;
+    display: block;
+    margin: auto;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 800px) {
+    .header-text {
+        font-size: 1.75em;
+        min-height: 180px;
+        padding: 50px 0 0;
+    }
+}
+@media screen and (max-width: 600px) {
+    .header-text {
+        font-size: 1.5em;
+        min-height: 150px;
+        padding: 30px 0 0;
+    }
+}
+@media screen and (max-width: 550px) {
+    .header-text {
+        font-size: 1em;
+        margin: 0 -100px;
+        min-height: 110px;
+        padding: 20px 0 0;
+    }
+}
+@keyframes blink {
+0% {
+    opacity: 1;
+}
+50% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+@keyframes blink {
+0% {
+    opacity: 1;
+}
+50% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+.nav {
+    list-style: outside none none;
+    margin: 20px auto;
+    text-align: center;
+}
+.nav p {
+    font-size: 0.5em;
+}
+.nav li {
+    display: inline-block;
+    margin: 10px 10px;
+}
+.nav .label {
+    padding: 0 0 0 5px;
+}
+.main-tabs {
+    display: block;
+    list-style: outside none none;
+    margin: 0;
+    text-align: center;
+}
+.main-tabs li {
+    display: inline-block;
+    margin: 5px 5px;
+    vertical-align: top;
+}
+.main-tabs a {
+    border-radius: 3px;
+    color: #fff;
+    display: block;
+    font-size: 3.25em;
+    padding-bottom: 1px;
+    padding-top: 15px;
+    text-decoration: none;
+    text-shadow: none;
+    transition: all 0.1s ease-in-out 0s;
+    width: 95px;
+}
+.main-tabs a:hover {
+    background: none repeat scroll 0 0 #fff;
+    color: #333;
+}
+.main-tabs .label {
+    clear: both;
+    display: block;
+    font-size: 0.5em;
+}
+.divider {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: block;
+    height: 1px;
+    margin: 5px auto;
+    width: 50%;
+}
+.secondary-tabs {
+    font-size: 1em;
+    margin: 0 0 30px;
+}
+.secondary-tabs a {
+    padding: 10px 0;
+    width: 60px;
+}
+.inline-nav {
+    display: inline-block;
+    vertical-align: top;
+}
+@media screen and (max-width: 800px) {
+    .main-tabs {
+        font-size: 0.8em;
+    }
+    .main-tabs a {
+        width: 80px;
+    }
+    .secondary-tabs {
+        font-size: 0.6em;
+    }
+    .secondary-tabs a {
+        width: 60px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .divider {
+        width: 60%;
+    }
+    .main-tabs li {
+        margin: 5px 10px;
+    }
+}
+@media screen and (max-width: 550px) {
+  .divider {
+      width: 50%;
+  }
+  .main-tabs {
+      font-size: 0.6em;
+  }
+  .main-tabs li {
+      margin: 5px;
+  }
+  .main-tabs a {
+      width: 70px;
+  }
+  .secondary-tabs {
+      font-size: 0.5em;
+  }
+  .secondary-tabs a {
+      width: 50px;
+  }
+}
+.block {
+    display: block;
+    margin: 10px auto;
+    padding: 0;
+    text-align: center;
+}
+@media (min-width: 1400px) {
+    .about {
+        background-size: 100% auto;
+    }
+}
+
+
+
+
+.heading {
+    text-align: center;
+    padding-bottom: 20px;
+}
+.subheading {
+    font-weight: normal;
+    padding: 15px;
+}
+.panel-row {
+    padding: 20px;
+}
+.puzzle-panel {
+    line-height: 2em;
+    font-family: "Ubuntu",sans-serif;
+    text-shadow: 0 1px 0 #fff;
+}
+.panel-heading {
+    font-size: 1.75em;
+    font-weight: 500;
+}
+.panel-body {
+    font-size: 1.5em;
+}
+.code-snippet {
+    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.footer {
+    margin: 0 auto 50px;
+    padding-top: 80px;
+    text-align: center;
+    font-size: 1.25em;
+}
+#download-button {
+    text-align: center;
+    padding: 80px;
+    padding-top: 100px;
+}
+#resume {
+    padding: 20px;
+}
+.btn-primary {
+    font-family: "Ubuntu",sans-serif;
+}
