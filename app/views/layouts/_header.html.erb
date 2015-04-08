@@ -1,0 +1,58 @@
+<div class="header">
+  <div class="wrapper">
+    <div class="header-text">
+      <h1 class="greeting">Hey Powershop!</h1>
+      <h4 class="sub-greeting">I'm Kieran.<h4>
+      <h4 class="thanks">Thanks for taking a look at my application.</h4>
+    </div>
+    <ul class="main-tabs">
+      <li class="nav">
+        <%= link_to static_pages_cover_letter_path do %>
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <p>Cover Letter</p>
+        <% end %>
+      </li>
+      <li class="nav">
+        <%= link_to static_pages_resume_path do %>
+        <i class="fa fa-clipboard" aria-hidden="true"></i>
+        <p>Resume</p>
+        <% end %>
+      </li>
+      <li class="nav">
+        <%= link_to static_pages_puzzle_solution_path do %>
+        <i class="fa fa-puzzle-piece"></i>
+        <p>Puzzle</p>
+        <% end %>
+      </li>
+    </ul>
+    <div class="divider"></div>
+    <ul class="main-tabs secondary-tabs">
+      <li class="nav">
+        <%= mail_to "trezona.lecomte@gmail.com" do %>
+          <i class="fa fa-at"></i>
+        <% end %>
+      </li>
+      <li class="nav">
+        <a href="http://nz.linkedin.com/in/trezonalecomte">
+          <i class="fa fa-linkedin-square"></i>
+        </a>
+      </li>
+      <li class="nav">
+        <a href="http://www.github.com/trezona-lecomte">
+          <i class="fa fa-github"></i>
+        </a>
+      </li>
+      <li class="nav">
+        <a href="http://twitter.com/treLeComte">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="padding"><br></div>
+</div>
+<div class="avatar">
+  <%= link_to root_url do %>
+    <%= image_tag 'avatar-new-02.png', class: "img-responsive"%>
+  <% end %>
+</div>
