@@ -1,7 +1,10 @@
 class StaticPagesController < ApplicationController
-  def home
+  def resume
   end
 
-  def resume
+  def cover_letter
+  end
+
+  def puzzle_solution
   end
 end
