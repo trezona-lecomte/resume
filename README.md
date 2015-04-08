@@ -1,7 +1,7 @@
 README
 ======
 This is a very simple website created to aid in my application for a job as a 
-Software Developer for the awesome NZ company Powershop.
+Software Developer with the awesome company [Powershop][powershop-link].
 
 This site consists of 3 pages:
 
@@ -32,3 +32,5 @@ I haven't needed to implement any models, This site at least serves to
 demonstrate a basic understanding of the rails project structure, middleware
 stack, routing (again very basic with no resourceful routing), dependency 
 management tool (bundle), views with emedded ruby, and the rails asset pipeline.
+
+[powershop-link]: http://www.powershop.com
