@@ -5,6 +5,7 @@
 
 $dark-blue: #222931;
 
+/* Generic */
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
     box-sizing: border-box;
     margin: 0;
@@ -17,26 +18,20 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 100%;
     font-weight: normal;
 }
-@font-face {
-    font-family: "icomoon";
-    font-style: normal;
-    font-weight: normal;
-    src: url("/assets/fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/icomoon.woff") format("woff"), url("/assets/fonts/icomoon.ttf") format("truetype"), url("/assets/fonts/icomoon.svg#icomoon") format("svg");
-}
 body {
     background-color: #f8f8f8;
     font-family: "Ubuntu",sans-serif;
     font-size: 100%;
     text-shadow: 0 1px 0 #fff;
 }
-.wrapper {
-    margin: auto;
-    max-width: 900px;
-    padding: 0 20px;
-}
 p {
     line-height: 2em;
     margin: 0 0 20px;
+}
+@media screen and (max-width: 550px) {
+    p {
+        line-height: 1.6em;
+    }
 }
 a {
     color: #00008F;
@@ -44,9 +39,6 @@ a {
 }
 a:hover {
     color: #000;
-}
-.txt-ctr {
-    text-align: center;
 }
 h1, .h1 {
     font-size: 2.5em;
@@ -75,17 +67,8 @@ h6, .h6 {
     font-size: 0.75em;
     margin: 2.33em 0;
 }
-.left {
-    float: left;
-}
-.right {
-    float: right;
-}
-.clear {
-    clear: both;
-}
-.nav {
-}
+
+/* Navigation */
 .nav li {
     display: inline-block;
     margin-left: -0.32em;
@@ -96,12 +79,12 @@ h6, .h6 {
 .nav li a {
     display: block;
 }
-@media screen and (max-width: 550px) {
-    p {
-        line-height: 1.6em;
-    }
-}
-@media not all, only screen and (min--moz-device-pixel-ratio: 2), not all, not all, only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+
+/* Site Header */
+.wrapper {
+    margin: auto;
+    max-width: 900px;
+    padding: 0 20px;
 }
 .header {
     background-color: $dark-blue;
@@ -124,6 +107,28 @@ h6, .h6 {
     padding: 80px 0 0;
     text-align: center;
     text-shadow: 0 2px 4px #000;
+}
+@media screen and (max-width: 800px) {
+    .header-text {
+        font-size: 1.75em;
+        min-height: 180px;
+        padding: 50px 0 0;
+    }
+}
+@media screen and (max-width: 600px) {
+    .header-text {
+        font-size: 1.5em;
+        min-height: 150px;
+        padding: 30px 0 0;
+    }
+}
+@media screen and (max-width: 550px) {
+    .header-text {
+        font-size: 1em;
+        margin: 0 -100px;
+        min-height: 110px;
+        padding: 20px 0 0;
+    }
 }
 .greeting {
     font-size: 2em;
@@ -156,29 +161,6 @@ h6, .h6 {
     display: block;
     margin: auto;
     overflow: hidden;
-}
-
-@media screen and (max-width: 800px) {
-    .header-text {
-        font-size: 1.75em;
-        min-height: 180px;
-        padding: 50px 0 0;
-    }
-}
-@media screen and (max-width: 600px) {
-    .header-text {
-        font-size: 1.5em;
-        min-height: 150px;
-        padding: 30px 0 0;
-    }
-}
-@media screen and (max-width: 550px) {
-    .header-text {
-        font-size: 1em;
-        margin: 0 -100px;
-        min-height: 110px;
-        padding: 20px 0 0;
-    }
 }
 @keyframes blink {
 0% {
@@ -322,10 +304,6 @@ h6, .h6 {
         background-size: 100% auto;
     }
 }
-
-
-
-
 .heading {
     text-align: center;
     padding-bottom: 20px;
