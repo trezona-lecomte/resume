@@ -68,18 +68,6 @@ h6, .h6 {
     margin: 2.33em 0;
 }
 
-/* Navigation */
-.nav li {
-    display: inline-block;
-    margin-left: -0.32em;
-}
-.nav li:first-child {
-    margin-left: 0;
-}
-.nav li a {
-    display: block;
-}
-
 /* Site Header */
 .wrapper {
     margin: auto;
@@ -138,47 +126,17 @@ h6, .h6 {
         padding: 20px 0 0;
     }
 }
-.avatar {
-    border: 5px solid $dark-blue;
-    border-radius: 100%;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+
+/* Site Header - Navigation */
+.nav li {
+    display: inline-block;
+    margin-left: -0.32em;
+}
+.nav li:first-child {
+    margin-left: 0;
+}
+.nav li a {
     display: block;
-    height: 130px;
-    width: 130px;
-    margin: -40px auto 20px;
-    overflow: hidden;
-    padding: 0;
-    position: center;
-    z-index: 9999;
-}
-.avatar img {
-    border: 0 none;
-    border-radius: 100%;
-    display: block;
-    margin: auto;
-    overflow: hidden;
-}
-@keyframes blink {
-0% {
-    opacity: 1;
-}
-50% {
-    opacity: 0;
-}
-100% {
-    opacity: 1;
-}
-}
-@keyframes blink {
-0% {
-    opacity: 1;
-}
-50% {
-    opacity: 0;
-}
-100% {
-    opacity: 1;
-}
 }
 .nav {
     list-style: outside none none;
@@ -203,7 +161,7 @@ h6, .h6 {
 }
 .main-tabs li {
     display: inline-block;
-    margin: 5px 5px;
+    margin: 5px 15px;
     vertical-align: top;
 }
 .main-tabs a {
@@ -222,11 +180,6 @@ h6, .h6 {
     background: none repeat scroll 0 0 #fff;
     color: #333;
 }
-.main-tabs .label {
-    clear: both;
-    display: block;
-    font-size: 0.5em;
-}
 .divider {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -243,22 +196,21 @@ h6, .h6 {
     padding: 10px 0;
     width: 60px;
 }
-.inline-nav {
-    display: inline-block;
-    vertical-align: top;
-}
 @media screen and (max-width: 800px) {
     .main-tabs {
-        font-size: 0.8em;
+        font-size: 0.85em;
     }
     .main-tabs a {
-        width: 80px;
+        width: 90px;
     }
     .secondary-tabs {
-        font-size: 0.6em;
+        font-size: 0.8em;
     }
     .secondary-tabs a {
         width: 60px;
+    }
+    .divider {
+        width: 65%;
     }
 }
 @media screen and (max-width: 650px) {
@@ -271,10 +223,10 @@ h6, .h6 {
 }
 @media screen and (max-width: 550px) {
   .divider {
-      width: 50%;
+      width: 70%;
   }
   .main-tabs {
-      font-size: 0.6em;
+      font-size: 0.7em;
   }
   .main-tabs li {
       margin: 5px;
@@ -283,7 +235,7 @@ h6, .h6 {
       width: 70px;
   }
   .secondary-tabs {
-      font-size: 0.5em;
+      font-size: 0.65em;
   }
   .secondary-tabs a {
       width: 50px;
@@ -295,11 +247,30 @@ h6, .h6 {
     padding: 0;
     text-align: center;
 }
-@media (min-width: 1400px) {
-    .about {
-        background-size: 100% auto;
-    }
+
+/* Site Header - Avatar */
+.avatar {
+    border: 5px solid $dark-blue;
+    border-radius: 100%;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    display: block;
+    height: 130px;
+    width: 130px;
+    margin: -40px auto 20px;
+    overflow: hidden;
+    padding: 0;
+    position: center;
+    z-index: 9999;
 }
+.avatar img {
+    border: 0 none;
+    border-radius: 100%;
+    display: block;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Static page elements */
 .heading {
     text-align: center;
     padding-bottom: 20px;
@@ -323,17 +294,59 @@ h6, .h6 {
 .panel-body {
     font-size: 1.5em;
 }
+@media screen and (max-width: 800px) {
+    .subheading {
+        font-size: 1.6em;
+    }
+}
 .code-snippet {
     padding-bottom: 10px;
     padding-top: 15px;
     padding-left: 5px;
     padding-right: 5px;
 }
+@media screen and (max-width: 550px) {
+    .heading {
+        font-size: 1em;
+        padding-bottom: 5px;
+    }
+    .panel-row {
+        padding: 0;
+    }
+    .panel-heading {
+        font-size: 1.5em;
+        font-weight: 300;
+        padding: 7.5px;
+    }
+    .panel-body {
+        font-size: 1.3em;
+        padding: 7.5px;
+    }
+    .code-snippet {
+        padding-bottom: 5px;
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .code-snippet pre {
+        font-size: 80%;
+    }   
+}
+
+/* Footer */
 .footer {
     margin: 0 auto 50px;
     padding-top: 80px;
     text-align: center;
     font-size: 1.25em;
+}
+@media screen and (max-width: 550px) {
+    .footer {
+        margin: 0 auto 30px;
+        padding-top: 40px;
+        text-align: center;
+        font-size: 1.15em;
+    }
 }
 #download-button {
     text-align: center;
