@@ -1,9 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 @import url("http://fonts.googleapis.com/css?family=Ubuntu:400,500,700");
 
+/* Variables */
 $dark-blue: #222931;
+$creme: #f8f8f8;
+$white: #fff;
+$near-black: #00008F;
 
 /* Generic */
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
@@ -19,10 +22,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 }
 body {
-    background-color: #f8f8f8;
+    background-color: $creme;
     font-family: "Ubuntu",sans-serif;
     font-size: 100%;
-    text-shadow: 0 1px 0 #fff;
+    text-shadow: 0 1px 0 $white;
 }
 p {
     line-height: 2em;
@@ -34,7 +37,7 @@ p {
     }
 }
 a {
-    color: #00008F;
+    color: $near-black;
     text-decoration: none;
 }
 a:hover {
@@ -89,12 +92,12 @@ h6, .h6 {
     }
 }
 .header-text {
-    color: #fff;
+    color: $white;
     font-size: 2.75em;
     min-height: 215px;
     padding: 80px 0 0;
     text-align: center;
-    text-shadow: 0 2px 4px #000;
+    text-shadow: 0 2px 4px $near-black;
 }
 @media screen and (max-width: 800px) {
     .header-text {
@@ -166,7 +169,7 @@ h6, .h6 {
 }
 .main-tabs a {
     border-radius: 3px;
-    color: #fff;
+    color: $white;
     display: block;
     font-size: 4em;
     padding-bottom: 1px;
@@ -177,7 +180,7 @@ h6, .h6 {
     width: 120px;
 }
 .main-tabs a:hover {
-    background: none repeat scroll 0 0 #fff;
+    background: none repeat scroll 0 0 $white;
     color: #333;
 }
 .divider {
@@ -285,7 +288,7 @@ h6, .h6 {
 .puzzle-panel {
     line-height: 2em;
     font-family: "Ubuntu",sans-serif;
-    text-shadow: 0 1px 0 #fff;
+    text-shadow: 0 1px 0 $white;
 }
 .panel-heading {
     font-size: 1.75em;
