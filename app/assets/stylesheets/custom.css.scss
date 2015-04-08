@@ -168,13 +168,13 @@ h6, .h6 {
     border-radius: 3px;
     color: #fff;
     display: block;
-    font-size: 3.25em;
+    font-size: 4em;
     padding-bottom: 1px;
     padding-top: 15px;
     text-decoration: none;
     text-shadow: none;
     transition: all 0.1s ease-in-out 0s;
-    width: 95px;
+    width: 120px;
 }
 .main-tabs a:hover {
     background: none repeat scroll 0 0 #fff;
@@ -331,6 +331,12 @@ h6, .h6 {
     .code-snippet pre {
         font-size: 80%;
     }   
+}
+@media screen and (min-width: 900px) {
+    .heading {
+        font-size: 1.5em;
+        padding-bottom: 20px;
+    }
 }
 
 /* Footer */
