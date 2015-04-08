@@ -338,7 +338,7 @@ h6, .h6 {
     margin: 0 auto 50px;
     padding-top: 80px;
     text-align: center;
-    font-size: 1.25em;
+    font-size: 1.75em;
 }
 @media screen and (max-width: 550px) {
     .footer {
@@ -348,14 +348,16 @@ h6, .h6 {
         font-size: 1.15em;
     }
 }
+
+/* Misc */
 #download-button {
     text-align: center;
-    padding: 80px;
-    padding-top: 100px;
+    padding-top: 80px;
 }
 #resume {
     padding: 20px;
 }
 .btn-primary {
     font-family: "Ubuntu",sans-serif;
+    font-weight: 300;
 }
